@@ -1,0 +1,21 @@
+<!-- arithmetic/templates/arithmetic/calculate.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+</head>
+<body>
+    <h1>Arithmetic Calculator</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not None %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
